@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aurum Strategy | Consultoria de Dados e BI</title>
+    <title>Aurum Strategy | Inteligência de Dados e BI</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -54,16 +54,16 @@
         }
 
         .logo-img {
-            height: 45px; /* Altura ideal para visualização */
+            height: 40px;
             width: auto;
         }
 
         .logo-text {
             font-weight: 800;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--azul-profundo);
-            letter-spacing: -0.5px;
             text-transform: uppercase;
+            letter-spacing: -0.5px;
         }
 
         .nav-links {
@@ -79,9 +79,7 @@
             transition: var(--transition);
         }
 
-        .nav-links a:hover {
-            color: var(--azul-profundo);
-        }
+        .nav-links a:hover { color: var(--azul-profundo); }
 
         .btn-navbar {
             background-color: var(--azul-profundo);
@@ -90,16 +88,15 @@
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.9rem;
             transition: var(--transition);
         }
 
-        .btn-navbar:hover {
-            background-color: var(--laranja-cta);
-        }
+        .btn-navbar:hover { background-color: var(--laranja-cta); }
 
         /* --- Hero Section --- */
         .hero {
-            padding: 12rem 8% 6rem;
+            padding: 11rem 8% 6rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -108,11 +105,11 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
             color: var(--azul-profundo);
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            max-width: 900px;
+            max-width: 850px;
         }
 
         .hero p {
@@ -140,46 +137,35 @@
             box-shadow: 0 15px 25px rgba(247, 148, 29, 0.4);
         }
 
-        /* --- Portfolio Grid --- */
-        .portfolio {
-            padding: 8rem 8%;
-        }
+        /* --- Portfólio Grid --- */
+        .portfolio { padding: 7rem 8%; }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
+        .section-header { text-align: center; margin-bottom: 4rem; }
 
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--azul-profundo);
-            margin-bottom: 1rem;
-        }
+        .section-header h2 { font-size: 2.5rem; color: var(--azul-profundo); margin-bottom: 1rem; }
 
         .dashboard-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .dashboard-card {
             background: white;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
             border: 1px solid #eee;
             transition: var(--transition);
         }
 
-        .dashboard-card:hover {
-            transform: scale(1.02);
-        }
+        .dashboard-card:hover { transform: translateY(-10px); }
 
         .iframe-wrap {
             position: relative;
-            padding-bottom: 56.25%;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
             height: 0;
-            background: #f9f9f9;
+            background: #f0f2f5;
         }
 
         .iframe-wrap iframe {
@@ -191,29 +177,25 @@
             border: 0;
         }
 
-        .card-info {
-            padding: 1.5rem;
-        }
+        .card-info { padding: 1.8rem; }
 
-        .card-info h3 {
-            color: var(--roxo-inovacao);
-            margin-bottom: 0.5rem;
-        }
+        .card-info h3 { color: var(--roxo-inovacao); margin-bottom: 0.8rem; }
 
         .tag {
             display: inline-block;
             padding: 4px 12px;
             border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin-bottom: 10px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            margin-bottom: 12px;
             background: #eef2ff;
             color: var(--azul-profundo);
+            text-transform: uppercase;
         }
 
-        /* --- Sobre / Autoridade --- */
+        /* --- Sobre --- */
         .about {
-            padding: 8rem 8%;
+            padding: 7rem 8%;
             background-color: var(--cinza-claro);
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -221,18 +203,9 @@
             align-items: center;
         }
 
-        .about-content h2 {
-            font-size: 2.2rem;
-            color: var(--azul-profundo);
-            margin-bottom: 1.5rem;
-        }
+        .about-content h2 { font-size: 2.2rem; color: var(--azul-profundo); margin-bottom: 1.5rem; }
 
-        .about-content p {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        /* --- Footer & Form --- */
+        /* --- Footer --- */
         footer {
             background-color: var(--azul-profundo);
             color: white;
@@ -242,18 +215,8 @@
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 5rem;
+            gap: 4rem;
             margin-bottom: 4rem;
-        }
-
-        .footer-info h2 { font-size: 2rem; margin-bottom: 1.5rem; }
-        
-        .contact-links a {
-            display: block;
-            color: var(--ciano-tech);
-            text-decoration: none;
-            margin: 1rem 0;
-            font-weight: 600;
         }
 
         .contact-form {
@@ -266,7 +229,7 @@
         }
 
         .contact-form input, .contact-form textarea {
-            padding: 0.9rem;
+            padding: 1rem;
             border: 1px solid #ddd;
             border-radius: 10px;
             font-family: inherit;
@@ -276,27 +239,29 @@
             background-color: var(--laranja-cta);
             color: white;
             border: none;
-            padding: 1rem;
+            padding: 1.2rem;
             border-radius: 30px;
             font-weight: 800;
             cursor: pointer;
             transition: var(--transition);
-            text-transform: uppercase;
         }
 
-        .contact-form button:hover {
-            filter: brightness(1.1);
+        .contact-links a {
+            display: block;
+            color: var(--ciano-tech);
+            text-decoration: none;
+            margin-top: 1rem;
+            font-weight: 600;
         }
 
         .copyright {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 2.5rem;
             border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             opacity: 0.6;
         }
 
-        /* Responsive */
         @media (max-width: 968px) {
             .about { grid-template-columns: 1fr; text-align: center; }
             .nav-links { display: none; }
@@ -307,12 +272,12 @@
 
     <nav>
         <a href="#" class="logo-container">
-            <img src="logo.png" alt="Aurum Strategy Logo" class="logo-img">
+            <img src="logo.png" alt="Aurum Strategy" class="logo-img">
             <span class="logo-text">Aurum Strategy</span>
         </a>
         <ul class="nav-links">
-            <li><a href="#portfolio">Portfólio</a></li>
-            <li><a href="#sobre">Consultoria</a></li>
+            <li><a href="#portfolio">Dashboards</a></li>
+            <li><a href="#sobre">Sobre</a></li>
             <li><a href="#contato">Contato</a></li>
         </ul>
         <a href="#contato" class="btn-navbar">Falar com Especialista</a>
@@ -320,47 +285,54 @@
 
     <header class="hero">
         <h1>Transforme dados em decisões lucrativas</h1>
-        <p>A Aurum Strategy automatiza sua visão de negócio, substituindo planilhas manuais por Dashboards inteligentes que impulsionam o crescimento de PMEs.</p>
-        <a href="#portfolio" class="btn-hero">Ver Soluções na Prática</a>
+        <p>A Aurum Strategy automatiza sua visão de negócio através de Business Intelligence, eliminando processos manuais e gerando clareza estratégica.</p>
+        <a href="#portfolio" class="btn-hero">Explorar Dashboards</a>
     </header>
 
     <section id="portfolio" class="portfolio">
         <div class="section-header">
-            <h2>Dashboards de Alta Performance</h2>
-            <p>Clique para explorar exemplos reais de integração e análise.</p>
+            <h2>Portfólio de Soluções</h2>
+            <p>Interaja com nossos relatórios e veja como organizamos informações complexas.</p>
         </div>
 
         <div class="dashboard-grid">
-            <div class="dashboard-card">
+            <div class="dashboard-card" style="border-top: 5px solid var(--azul-profundo);">
                 <div class="iframe-wrap">
-                    <iframe src="about:blank"></iframe>
+                    <iframe 
+                        src="https://app.powerbi.com/reportEmbed?reportId=724a71ca-018f-4722-a657-65edfa50d0d9&autoAuth=true&ctid=8aa57742-b5c9-4a17-bd34-1f1406514f81" 
+                        allowFullScreen="true">
+                    </iframe>
                 </div>
                 <div class="card-info">
-                    <span class="tag">COMERCIAL</span>
-                    <h3>Dashboard de Vendas</h3>
-                    <p>Visão clara de metas, performance de vendedores e sazonalidade para prever o faturamento.</p>
+                    <span class="tag">Comercial</span>
+                    <h3>Análise de Vendas 1</h3>
+                    <p>Performance de vendas, metas e acompanhamento de indicadores comerciais em tempo real.</p>
                 </div>
             </div>
 
-            <div class="dashboard-card" style="border-top: 4px solid var(--roxo-inovacao);">
+            <div class="dashboard-card" style="border-top: 5px solid var(--roxo-inovacao);">
                 <div class="iframe-wrap">
-                    <iframe src="about:blank"></iframe>
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #999; font-size: 0.9rem; padding: 20px; text-align: center;">
+                        [Dashboard Financeiro em Desenvolvimento]
+                    </div>
                 </div>
                 <div class="card-info">
-                    <span class="tag">FINANCEIRO</span>
-                    <h3>Gestão de Fluxo de Caixa</h3>
-                    <p>Controle de DRE, custos fixos e variáveis com atualização automática direto do seu banco de dados.</p>
+                    <span class="tag">Gestão</span>
+                    <h3>Fluxo de Caixa e DRE</h3>
+                    <p>Controle financeiro automatizado para PMEs. Em breve disponível para demonstração.</p>
                 </div>
             </div>
 
-            <div class="dashboard-card" style="border-top: 4px solid var(--laranja-cta);">
+            <div class="dashboard-card" style="border-top: 5px solid var(--laranja-cta);">
                 <div class="iframe-wrap">
-                    <iframe src="about:blank"></iframe>
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #999; font-size: 0.9rem; padding: 20px; text-align: center;">
+                        [Dashboard de Estoque em Desenvolvimento]
+                    </div>
                 </div>
                 <div class="card-info">
-                    <span class="tag">OPERAÇÕES</span>
-                    <h3>Controle de Estoque</h3>
-                    <p>Análise de giro, curva ABC e alertas de reposição para evitar capital parado ou falta de produtos.</p>
+                    <span class="tag">Logística</span>
+                    <h3>Inteligência de Inventário</h3>
+                    <p>Otimização de giro de estoque e alertas de ruptura. Em breve disponível.</p>
                 </div>
             </div>
         </div>
@@ -368,16 +340,16 @@
 
     <section id="sobre" class="about">
         <div class="about-content">
-            <h2>Expertise Técnica aplicada à Estratégia</h2>
-            <p>Com vasta experiência em <strong>Business Intelligence e Análise de Dados</strong>, a Aurum Strategy foca no que realmente importa: o ROI das suas decisões.</p>
-            <p>Utilizamos tecnologias modernas como Power BI, Power Query e MongoDB para garantir que seus dados sejam seguros, escaláveis e, acima de tudo, úteis.</p>
+            <h2>Dados que contam histórias reais.</h2>
+            <p>Especialista em transformar bancos de dados complexos (MongoDB, SQL, Planilhas) em ferramentas de gestão visual poderosas.</p>
+            <p>Na Aurum Strategy, unimos técnica de Analista de Dados com visão de negócio para entregar o que sua empresa precisa para crescer.</p>
         </div>
         <div style="background: var(--azul-profundo); padding: 3rem; border-radius: 30px; color: white;">
-            <h3 style="margin-bottom: 1rem;">O que entregamos:</h3>
-            <ul style="list-style: none;">
-                <li style="margin-bottom: 15px;">🚀 Automação de processos manuais.</li>
-                <li style="margin-bottom: 15px;">📊 Relatórios dinâmicos e intuitivos.</li>
-                <li style="margin-bottom: 15px;">💡 Insights estratégicos para PMEs.</li>
+            <h3>Diferenciais Aurum:</h3>
+            <ul style="list-style: none; margin-top: 1.5rem;">
+                <li style="margin-bottom: 1rem;">✓ Dashboards 100% Mobile-Friendly</li>
+                <li style="margin-bottom: 1rem;">✓ Automação de extração de dados</li>
+                <li style="margin-bottom: 1rem;">✓ Foco total em ROI e Lucratividade</li>
             </ul>
         </div>
     </section>
@@ -385,25 +357,25 @@
     <footer id="contato">
         <div class="footer-grid">
             <div class="footer-info">
-                <h2>Pronto para digitalizar sua gestão?</h2>
-                <p>Nossa equipe está pronta para desenhar o mapa de dados do seu sucesso.</p>
+                <h2>Vamos elevar o nível da sua empresa?</h2>
+                <p>Mande uma mensagem e agende uma conversa técnica sobre seus dados.</p>
                 <div class="contact-links">
                     <a href="mailto:contato@aurumstrategy.com.br">contato@aurumstrategy.com.br</a>
-                    <a href="https://www.linkedin.com/company/aurum-strategy" target="_blank">LinkedIn: Aurum Strategy →</a>
+                    <a href="https://www.linkedin.com/company/aurum-strategy" target="_blank">LinkedIn Page →</a>
                 </div>
             </div>
 
             <form class="contact-form">
-                <input type="text" placeholder="Seu Nome" required>
-                <input type="text" placeholder="Sua Empresa" required>
-                <input type="tel" placeholder="Seu WhatsApp" required>
-                <textarea rows="4" placeholder="Como podemos ajudar?"></textarea>
+                <input type="text" placeholder="Nome Completo" required>
+                <input type="text" placeholder="Empresa" required>
+                <input type="tel" placeholder="WhatsApp (DDD)" required>
+                <textarea rows="4" placeholder="Fale brevemente sobre o seu desafio com dados..."></textarea>
                 <button type="submit">Solicitar Orçamento</button>
             </form>
         </div>
         
         <div class="copyright">
-            &copy; 2026 Aurum Strategy - Consultoria de BI para PMEs. Todos os direitos reservados.
+            &copy; 2026 Aurum Strategy - Todos os direitos reservados.
         </div>
     </footer>
 
