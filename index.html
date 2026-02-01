@@ -67,6 +67,8 @@
             box-shadow: 0 10px 20px rgba(247, 148, 29, 0.2);
             transition: var(--transicao);
             white-space: nowrap;
+            cursor: pointer;
+            border: none;
         }
         .btn-principal:hover { transform: translateY(-3px); filter: brightness(1.1); box-shadow: 0 15px 25px rgba(247, 148, 29, 0.3); }
 
@@ -117,8 +119,9 @@
         footer { background: var(--azul-profundo); color: white; padding: 80px 8% 40px; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; max-width: 1200px; margin: 0 auto; }
         .form-box { background: white; padding: 30px; border-radius: 15px; display: flex; flex-direction: column; gap: 15px; }
-        .form-box input, .form-box textarea { padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; }
-        .btn-send { background: var(--laranja-cta); color: white; border: none; padding: 15px; border-radius: 30px; font-weight: 800; cursor: pointer; transition: var(--transicao); }
+        .form-box input, .form-box textarea { padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; width: 100%; color: var(--texto); }
+        .btn-send { background: var(--laranja-cta); color: white; border: none; padding: 15px; border-radius: 30px; font-weight: 800; cursor: pointer; transition: var(--transicao); text-transform: uppercase; }
+        .btn-send:hover { background: var(--roxo-inovacao); transform: scale(1.02); }
         
         .social-link {
             display: inline-flex;
@@ -155,14 +158,14 @@
             <li><a href="#sobre">Consultoria</a></li>
             <li><a href="#portfolio">Portfólio</a></li>
             <li><a href="https://www.linkedin.com/company/aurum-strategy" target="_blank">LinkedIn</a></li>
-            <li><a href="#contato" class="btn-contato-nav">Orçamento</a></li>
+            <li><a href="#contato" class="btn-contato-nav">Solicitar Vaga</a></li>
         </ul>
     </nav>
 
     <header class="hero">
         <h1>Transforme dados em decisões lucrativas</h1>
         <p>A Aurum Strategy automatiza sua visão de negócio através de Business Intelligence de alta performance para PMEs.</p>
-        <a href="#portfolio" class="btn-principal">Ver Dashboards na Prática</a>
+        <a href="#contato" class="btn-principal">Garantir Implementação Gratuita</a>
     </header>
 
     <section id="sobre" class="sobre">
@@ -234,25 +237,45 @@
                     Acompanhe-nos no LinkedIn →
                 </a>
             </div>
-            <form class="form-box">
-                <input type="text" placeholder="Nome" required>
-                <input type="text" placeholder="Empresa" required>
-                <input type="tel" placeholder="WhatsApp" required>
-                <textarea rows="3" placeholder="Qual seu principal desafio hoje?"></textarea>
-                <button type="submit" class="btn-send">Solicitar Consultoria</button>
+            <form class="form-box" id="form-whatsapp">
+                <input type="text" id="nome" placeholder="Nome" required>
+                <input type="text" id="empresa" placeholder="Empresa" required>
+                <input type="tel" id="whatsapp-user" placeholder="WhatsApp (DDD + Número)" required>
+                <textarea id="desafio" rows="3" placeholder="Qual seu principal desafio hoje?"></textarea>
+                <button type="submit" class="btn-send">Entre em Contato</button>
+                
             </form>
         </div>
         <p style="text-align: center; margin-top: 50px; opacity: 0.5; font-size: 0.8rem;">&copy; 2026 Aurum Strategy</p>
     </footer>
 
     <script>
+        // Lógica do Carrossel
         let idx = 0;
         function move(n) {
             idx = (idx + n + 3) % 3;
             document.getElementById('slides').style.transform = `translateX(${-idx * 100}%)`;
         }
+
+        // Lógica do WhatsApp
+        document.getElementById('form-whatsapp').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // --- CONFIGURAÇÃO: COLOQUE SEU NÚMERO ABAIXO ---
+            const numeroEmpresa = "5511991988976"; 
+
+            const nome = document.getElementById('nome').value;
+            const empresa = document.getElementById('empresa').value;
+            const whatsUser = document.getElementById('whatsapp-user').value;
+            const desafio = document.getElementById('desafio').value;
+
+            const mensagem = `Olá! Sou ${nome} da empresa ${empresa}.%0A%0A` +
+                             `*Meu desafio:* ${desafio}%0A` +
+                             `*Meu WhatsApp:* ${whatsUser}%0A%0A` +
+                             `Vim pelo site da Aurum Strategy para a consultoria gratuita.`;
+
+            window.open(`https://wa.me/${numeroEmpresa}?text=${mensagem}`, '_blank');
+        });
     </script>
 </body>
 </html>
-
-
