@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
     <title>Aurum Strategy | Inteligência de Dados e BI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --azul-profundo: #0A2DDE;
@@ -19,7 +19,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; color: var(--texto); line-height: 1.6; background: var(--branco); overflow-x: hidden; }
+        body { font-family: 'Sora', sans-serif; color: var(--texto); line-height: 1.6; background: var(--branco); overflow-x: hidden; }
 
         /* --- Navbar --- */
         nav {
@@ -145,6 +145,24 @@
             .portfolio-section { padding: 60px 5%; }
             .slide-caption h3 { font-size: 0.9rem; }
         }
+        /* Linha horizontal no footer */
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    margin: 40px auto 20px;
+    max-width: 80%; /* Não corta a tela inteira, fica mais elegante */
+}
+
+/* Ajuste fino nos ícones para não ficarem colados na linha */
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+    /* Removi a borda anterior daqui para usar a tag <hr> acima */
+}
     </style>
 </head>
 <body>
@@ -229,25 +247,43 @@
     </section>
 
 <footer id="contato">
-        <div class="footer-grid">
-            <div>
-                <h2 style="margin-bottom: 20px;">Vamos elevar o nível da sua gestão juntos?</h2>
-                <p>Converse com especialistas e faça uma avaliação GRATUITA agora mesmo!</p>
-                <p style="margin-top: 20px; font-weight: 600;">contato@aurumstrategy.com.br</p>
-                <a href="https://www.linkedin.com/company/aurum-strategy" target="_blank" class="social-link">
-                    Acompanhe-nos no LinkedIn →
-                </a>
-            </div>
-            <form class="form-box">
-                <input type="text" placeholder="Nome" required>
-                <input type="text" placeholder="Empresa" required>
-                <input type="tel" placeholder="WhatsApp" required>
-                <textarea rows="3" placeholder="Qual seu principal desafio hoje?"></textarea>
-                <button type="submit" class="btn-send">Entre em Contato</button>
-            </form>
+    <div class="footer-grid">
+        <div>
+            <h2 style="margin-bottom: 20px;">Vamos elevar o nível da sua gestão juntos?</h2>
+            <p>Converse com especialistas e faça uma avaliação GRATUITA agora mesmo!</p>
+            <p style="margin-top: 20px; font-weight: 600;">contato@aurumstrategy.com.br</p>
+            <a href="https://www.linkedin.com/company/aurum-strategy" target="_blank" class="social-link">
+                Acompanhe-nos no LinkedIn →
+            </a>
         </div>
-        <p style="text-align: center; margin-top: 50px; opacity: 0.5; font-size: 0.8rem;">&copy; 2026 Aurum Strategy - Catanduva, SP.</p>
-    </footer>
+        <form class="form-box" id="form-whatsapp">
+            <input type="text" id="nome" placeholder="Nome" required>
+            <input type="text" id="empresa" placeholder="Empresa" required>
+            <input type="tel" id="whatsapp-user" placeholder="WhatsApp" required>
+            <textarea id="desafio" rows="3" placeholder="Qual seu principal desafio hoje?"></textarea>
+            <button type="submit" class="btn-send">Entre em Contato</button>
+        </form>
+    </div>
+
+    <div class="footer-icons">
+            <a href="mailto:contato@aurumstrategy.com.br" title="E-mail">
+                <img src="email_branco.png" alt="Email">
+            </a>
+            <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" title="WhatsApp">
+                <img src="whatsapp_branco.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.linkedin.com/company/aurum-strategy" target="_blank" title="LinkedIn">
+                <img src="linkedin_branco.png" alt="LinkedIn">
+            </a>
+        </div>
+
+    <hr class="footer-divider">
+
+    <p style="text-align: center; margin-top: 20px; opacity: 0.5; font-size: 0.8rem;">
+        &copy; Todos direitos reservados a AURUM STRATEGY LTDA. CNPJ: 64.688.391/0001-61
+    </p>
+</footer>
+
 
     <script>
         // Lógica do Carrossel
@@ -279,6 +315,7 @@
     </script>
 </body>
 </html>
+
 
 
 
