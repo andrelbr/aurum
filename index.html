@@ -47,11 +47,23 @@
         .btn-contato-nav:hover { background: var(--laranja-cta) !important; transform: translateY(-2px); }
 
         /* --- Hero Section --- */
-        .hero {
-            padding: 160px 8% 80px;
-            text-align: center;
-            background: radial-gradient(circle at top right, #f0f4ff, #ffffff);
-        }
+.hero {
+    padding: 160px 8% 80px;
+    text-align: center;
+    
+    /* Camada 1: Um gradiente suave para o texto não sumir / Camada 2: Sua imagem */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.842), rgba(255, 255, 255, 0.568)), 
+        url('background.png');
+    
+    /* Formatação da Imagem */
+    background-size: cover;        /* Preenche todo o espaço sem distorcer */
+    background-position: center;   /* Foca no meio da imagem */
+    background-repeat: no-repeat;  /* Não deixa a imagem duplicar */
+    
+    /* Opcional: Efeito parallax (imagem fixa ao rolar) */
+    background-attachment: fixed; 
+}
         .hero h1 { font-size: clamp(1.8rem, 5vw, 3.5rem); color: var(--azul-profundo); line-height: 1.1; margin-bottom: 1.5rem; max-width: 900px; margin-inline: auto; }
         .hero p { font-size: 1.1rem; color: #555; max-width: 700px; margin: 0 auto 2.5rem; padding: 0 15px; }
 
@@ -163,9 +175,55 @@
     margin-top: 50px;
     /* Removi a borda anterior daqui para usar a tag <hr> acima */
 }
+/* Botão Flutuante WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px; /* Distância do fundo */
+    right: 40px;  /* Distância da direita */
+    background-color: #25d366; /* Verde oficial do WhatsApp para destaque */
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000; /* Garante que fique acima de tudo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transicao);
+}
+
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1); /* Dá um leve aumento ao passar o mouse */
+    background-color: #128c7e; /* Verde um pouco mais escuro no hover */
+}
+
+/* Ajuste para Mobile */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    .whatsapp-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
     </style>
 </head>
 <body>
+    <a href="https://wa.me/5511991988976?text=Olá!%20Estou%20navegando%20no%20site%20da%20Aurum%20Strategy%20e%20gostaria%20de%20falar%20com%20um%20especialista." 
+   class="whatsapp-float" 
+   target="_blank">
+    <img src="whatsapp_branco.png" alt="WhatsApp" class="whatsapp-icon">
+    </a>
 
     <nav>
         <a href="#" class="logo-container">
